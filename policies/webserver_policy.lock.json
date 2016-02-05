@@ -1,5 +1,5 @@
 {
-  "revision_id": "835cf6762efad2261ccc685eb69508613400029db7cb2920e129d580bb0aa101",
+  "revision_id": "18eab256419b5c15bf679c1e403fe3a275132c730f5e3618c00643410f95a197",
   "name": "webserver_policy",
   "run_list": [
     "recipe[iis_demo::default]"
@@ -7,18 +7,18 @@
   "cookbook_locks": {
     "iis_demo": {
       "version": "0.2.0",
-      "identifier": "ccfac65c6b730b351cc8103de680427135114c40",
-      "dotted_decimal_identifier": "57696625109988107.14949819357193856.73053989063744",
+      "identifier": "7e18b56b4c2c45a252b6c3387ebe21a794f821c0",
+      "dotted_decimal_identifier": "35493014533844037.45689891139911358.37003642544576",
       "source": "../cookbooks/iis_demo",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
         "remote": "git@github.com:nathenharvey/loadbalanced_iis_demo.git",
-        "revision": "c00547771dcb0d90cb6a8210c7247d99c6142f1d",
-        "working_tree_clean": true,
-        "published": true,
+        "revision": "36d57c56732ff45db168a07c544de56a2deae9d4",
+        "working_tree_clean": false,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/master"
+
         ]
       },
       "source_options": {

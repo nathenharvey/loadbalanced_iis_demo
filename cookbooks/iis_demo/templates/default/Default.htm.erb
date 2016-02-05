@@ -4,6 +4,12 @@
     <h2>ipaddress: <%= node['ipaddress'] %></h2>
     <h2>hostname: <%= node['hostname'] %></h2>
     <h2>total memory: <%= node['memory']['total'] %></h2>
+
+    <ul>
+    <% @pool_members.each do |member| %>
+      <li><a href="http://<%= member['cloud']['public_hostname']%>"><%= member['cloud']['public_hostname']%></a></li>
+    <% end %>
+    </ul>
  </body>
 </html>
 

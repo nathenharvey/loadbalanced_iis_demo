@@ -7,8 +7,12 @@ powershell_script 'Install IIS' do
   code 'add-windowsfeature Web-Server'
 end
 
+
+pool_members = search("node","recipes:iis*")
+
 template 'c:\inetpub\wwwroot\Default.htm' do
   source 'Default.htm.erb'
+  variables(:pool_members => pool_members)
 end
 
 service 'w3svc' do
