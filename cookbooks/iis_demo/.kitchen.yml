@@ -1,0 +1,38 @@
+---
+driver:
+  name: ec2
+  retryable_tries: 120
+  retryable_sleep: 5
+  aws_ssh_key_id: chef-training-default
+  region: us-east-1
+  availability_zone: us-east-1a
+  security_group_ids: sg-13f69876
+  subnet_id:  subnet-86f6f5c0
+  instance_type: m3.large
+
+  tags:
+    # Replace YOURNAME and YOURCOMPANY here
+    Name: "Loadbalanced IIS demo for Nathen, NCR"
+    created-by: "test-kitchen"
+    user: <%= ENV['USER'] %>
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: windows-2012r2
+    driver_config:
+      image_id: ami-ca82c4a0
+    transport:
+      username: Administrator
+      password: Cod3Can!
+
+suites:
+  - name: default
+    run_list:
+      - recipe[iis_demo::default]
+    attributes:
+
