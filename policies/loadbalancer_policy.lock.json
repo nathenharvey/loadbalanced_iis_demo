@@ -1,0 +1,82 @@
+{
+  "revision_id": "56d14818164ddbcdc97a58ae63ea3c0522860680d26a26ab8af4ead9c2079d62",
+  "name": "loadbalancer_policy",
+  "run_list": [
+    "recipe[haproxy::app_lb]"
+  ],
+  "cookbook_locks": {
+    "haproxy": {
+      "version": "1.6.7",
+      "identifier": "6a6f6c91e38167f2a33438b62ce46efdcf4c491b",
+      "dotted_decimal_identifier": "29958859626086759.68296389049068772.122036383664411",
+      "cache_key": "haproxy-1.6.7-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/haproxy/versions/1.6.7/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/haproxy/versions/1.6.7/download",
+        "version": "1.6.7"
+      }
+    },
+    "cpu": {
+      "version": "0.2.0",
+      "identifier": "bebdc454cdb6746e2b287f4280fa14f8ed993986",
+      "dotted_decimal_identifier": "53688896509032052.31009700371923194.23059370686854",
+      "cache_key": "cpu-0.2.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/cpu/versions/0.2.0/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/cpu/versions/0.2.0/download",
+        "version": "0.2.0"
+      }
+    },
+    "build-essential": {
+      "version": "2.2.4",
+      "identifier": "b5e7c8482a2c85345939f89e77ee6c87cb5fdd5a",
+      "dotted_decimal_identifier": "51201818174827653.14734804308097006.119330488442202",
+      "cache_key": "build-essential-2.2.4-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/build-essential/versions/2.2.4/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/build-essential/versions/2.2.4/download",
+        "version": "2.2.4"
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "haproxy",
+        "= 1.6.7"
+      ],
+      [
+        "cpu",
+        "= 0.2.0"
+      ],
+      [
+        "build-essential",
+        "= 2.2.4"
+      ]
+    ],
+    "dependencies": {
+      "haproxy (1.6.7)": [
+        [
+          "cpu",
+          ">= 0.2.0"
+        ],
+        [
+          "build-essential",
+          ">= 0.0.0"
+        ]
+      ],
+      "cpu (0.2.0)": [
+
+      ],
+      "build-essential (2.2.4)": [
+
+      ]
+    }
+  }
+}
