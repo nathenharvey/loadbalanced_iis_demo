@@ -16,5 +16,21 @@ describe 'iis_demo::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
+    it 'adds the Web-Server windows feature' do
+      expect(chef_run).to run_powershell_script('Install IIS').with(code: 'add-windowsfeature Web-Server')
+    end
+
+    it 'renders the home page' do
+      expect(chef_run).to render_file('c:\inetpub\wwwroot\Default.htm').with_content(/hello/i)
+    end
+
+    it 'starts the web server' do
+      expect(chef_run).to start_service 'w3svc'
+    end
+
+    it 'enables the web server' do
+      expect(chef_run).to enable_service 'w3svc'
+    end
   end
 end
